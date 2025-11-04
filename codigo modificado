@@ -1,0 +1,73 @@
+# Lista para almacenar las notas (puedes usar números enteros o decimales)
+notas = []
+
+# Inicializamos la variable que guardará la opción elegida por el usuario
+opcion = None
+
+# --- Definición de funciones --- #
+
+def mostrar_menu():
+    """Muestra las opciones del menú principal."""
+    print("\n--- MENÚ PRINCIPAL ---")
+    print("1. Agregar una nota")
+    print("2. Mostrar todas las notas")
+    print("3. Calcular promedio, mayor y menor")
+    print("4. Terminar programa")
+
+
+def agregar_nota(lista):
+    """Permite al usuario agregar una nota a la lista."""
+    try:
+        nota = float(input("Ingrese la nota a agregar: "))
+        lista.append(nota)
+        print(f"✅ Nota {nota} agregada correctamente.")
+    except ValueError:
+        print("🛑 ¡Entrada inválida! Debe ingresar un número para la nota.")
+
+
+def mostrar_notas(lista):
+    """Muestra todas las notas registradas."""
+    if lista:
+        print("\n--- LISTA DE NOTAS ---")
+        for i, nota in enumerate(lista):
+            print(f"Nota #{i+1}: {nota}")
+    else:
+        print("ℹ️ Aún no hay notas registradas.")
+
+
+def calcular_stats(lista):
+    """Calcula y muestra el promedio, la nota mayor y la menor."""
+    if lista:
+        promedio = sum(lista) / len(lista)
+        mayor = max(lista)
+        menor = min(lista)
+
+        print("\n--- RESULTADOS ---")
+        print(f"📊 Promedio de notas: {promedio:.2f}")
+        print(f"⭐ Nota más alta: {mayor}")
+        print(f"⬇️ Nota más baja: {menor}")
+    else:
+        print("ℹ️ No hay notas registradas para calcular estadísticas.")
+
+
+# --- Bucle principal del programa --- #
+while True:
+    mostrar_menu()
+    
+    try:
+        opcion = int(input("Seleccione una opción (1-4): "))
+    except ValueError:
+        print("🛑 ¡Opción inválida! Por favor, ingrese un número del 1 al 4.")
+        continue
+
+    if opcion == 1:
+        agregar_nota(notas)
+    elif opcion == 2:
+        mostrar_notas(notas)
+    elif opcion == 3:
+        calcular_stats(notas)
+    elif opcion == 4:
+        print("👋 ¡Programa finalizado! Gracias por usar el sistema.")
+        break
+    else:
+        print("🛑 Opción fuera de rango. Debe ser un número entre 1 y 4.")
