@@ -6,3 +6,7 @@ def ejercicio5():
         base = float(input("base: "))
         altura = float(input("altura: "))
     except:
+           print("entrada invalida.")
+          return
+  area = area_rectangulo(base, altura)
+  print(f"el area del rectangulo es: {area}")
