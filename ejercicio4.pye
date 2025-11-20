@@ -1,12 +1,10 @@
-def ejercicio4():
-    print("\n--- EJERCICIO 4: Listas ---")
-    lista = []
-
+def ejercico4():
+    print("\n--- EJERCICIO4: listas ---")
+    lista = ()
     for i in range(5):
-        nombre = input(f"Nombre {i+1}: ")
-        lista.append(nombre)
-
-    print("\nLista original:", lista)
-    print("Primer elemento:", lista[0])
-    print("Último elemento:", lista[-1])
-    print("Lista ordenada:", sorted(lista))
+         nombre = input(f"nombre {i+1}: ")
+         lista.append(nombre)
+    print("\nlista original:", lista)
+    print("primer elemento:", lista(0))
+    print("ultimo elemento:", lista(-1))
+    print("lista ordenada:", sorted(lista))
